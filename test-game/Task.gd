@@ -1,7 +1,6 @@
 extends Task
-class_name Task1
 
 
 func update():
-	print("Task updating")
+	print("Task1 updating")
 	return Task.SUCCESS

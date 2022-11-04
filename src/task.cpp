@@ -23,11 +23,19 @@ void Task::_bind_methods()
     ClassDB::bind_method("isSuccess", &Task::isSuccess);
     ClassDB::bind_method("isFailure", &Task::isFailure);
     ClassDB::bind_method("isTerminated", &Task::isTerminated);
+    ClassDB::bind_method("reset", &Task::reset);
 
     // Properties
     ClassDB::bind_method("set_status", &Task::set_status);
     ClassDB::bind_method(D_METHOD("get_status"), &Task::get_status);
     ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "status"), "set_status", "get_status");
+
+
+    // Enum
+    BIND_ENUM_CONSTANT(SUCCESS);
+    BIND_ENUM_CONSTANT(RUNNING);
+    BIND_ENUM_CONSTANT(FAILURE);
+    BIND_ENUM_CONSTANT(INVALID);
 }
 
 
@@ -45,7 +53,6 @@ Task::Status Task::update()
 void Task::initialize() {}
 void Task::terminate(Status s) {}
 
-
 // Methods
 Task::Status Task::tick()
 {
@@ -54,7 +61,7 @@ Task::Status Task::tick()
         initialize();
     }
 
-    status = update();
+    status = VariantCaster<Status>::cast(call("update"));
 
     if(status != Task::Status::RUNNING)
     {
@@ -85,8 +92,12 @@ bool Task::isTerminated() const
 }
 
 void Task::reset()
-{
+{   
     status = Task::Status::INVALID;
+    for(int i=0; i<get_child_count(); ++i)
+    {
+        (Object::cast_to<Task>(get_child(i)))->reset();
+    }
 }
 
 

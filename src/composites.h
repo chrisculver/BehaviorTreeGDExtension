@@ -17,6 +17,7 @@ protected:
 
 public:
     Status update() override;
+    void reset() override;
 
 private:
     int curChild=0;
@@ -32,6 +33,8 @@ protected:
 
 public:
     Status update() override;
+    // TODO: Should make Composites class which defines reset
+    void reset() override;
 
 private:
     int curChild=0;

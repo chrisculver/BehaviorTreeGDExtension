@@ -18,13 +18,14 @@ protected:
 
 
 public:
-    enum Status {RUNNING, SUCCESS, FAILURE, INVALID};
+    enum Status {FAILURE, SUCCESS, RUNNING, INVALID=-1};
 
     // Virtual methods - can be overwritten by derived classes
     virtual Status update();
 
     virtual void initialize();
     virtual void terminate(Status s);
+    virtual void reset();
 
     // Final methods
     Status tick(); 
@@ -33,7 +34,6 @@ public:
     bool isSuccess() const;
     bool isFailure() const;
     bool isTerminated() const;
-    void reset();
 
     // Property
     Status status;

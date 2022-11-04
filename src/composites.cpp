@@ -28,6 +28,13 @@ Task::Status Selector::update()
 }
 
 
+void Selector::reset()
+{
+    curChild=0;
+    Task::reset();
+}
+
+
 
 void Sequence::_bind_methods()
 {
@@ -50,4 +57,11 @@ Task::Status Sequence::update()
     }
 
     return Task::Status::SUCCESS;
+}
+
+
+void Sequence::reset()
+{
+    curChild=0;
+    Task::reset();
 }
