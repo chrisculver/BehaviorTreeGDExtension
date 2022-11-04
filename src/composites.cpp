@@ -36,7 +36,7 @@ void Sequence::_bind_methods()
 
 Task::Status Sequence::update()
 {
-    UtilityFunctions::print("Sequence pdate from ", get_name());
+    UtilityFunctions::print("Sequence update from node=", get_name());
     while(curChild<get_child_count())
     {
         auto status = (Object::cast_to<Task>(get_child(curChild)))->tick();

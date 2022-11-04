@@ -20,13 +20,13 @@ protected:
 public:
     enum Status {RUNNING, SUCCESS, FAILURE, INVALID};
 
-    // Abstract methods - can be overwritten by derived classes
+    // Virtual methods - can be overwritten by derived classes
     virtual Status update();
 
     virtual void initialize();
     virtual void terminate(Status s);
 
-    // Final methods - never overwrite
+    // Final methods
     Status tick(); 
 
     bool isRunning() const;

@@ -10,8 +10,8 @@ using namespace godot;
 void Task::_bind_methods()
 {
     // Abstract Methods
-    //ClassDB::bind_method("update", &Task::update);
-    BIND_VIRTUAL_METHOD(&Task, &Task::update);
+    ClassDB::bind_method("update", &Task::update);
+    //BIND_VIRTUAL_METHOD(&Task, &Task::update);
     ClassDB::bind_method("initialize", &Task::initialize);
     ClassDB::bind_method("terminate", &Task::terminate);
 

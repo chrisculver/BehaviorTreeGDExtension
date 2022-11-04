@@ -8,6 +8,22 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Task",
+"class": &"Task1",
+"language": &"GDScript",
+"path": "res://Task.gd"
+}, {
+"base": "Task",
+"class": &"Task2",
+"language": &"GDScript",
+"path": "res://Task2.gd"
+}]
+_global_script_class_icons={
+"Task1": "",
+"Task2": ""
+}
+
 [application]
 
 config/name="CPP-BT-TestGame"
