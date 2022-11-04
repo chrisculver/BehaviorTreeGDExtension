@@ -8,36 +8,40 @@
 
 using namespace godot;
 
-class Selector : public Task 
+class Composite : public Task 
 {
-    GDCLASS(Selector, Task);
+    GDCLASS(Composite, Task);
+
+protected:
+    static void _bind_methods();
+    int curChild=0;
+    
+public:
+    void reset() override;
+
+};
+
+class Selector : public Composite 
+{
+    GDCLASS(Selector, Composite);
 
 protected:
     static void _bind_methods();
 
 public:
     Status update() override;
-    void reset() override;
-
-private:
-    int curChild=0;
 };
 
 
-class Sequence : public Task
+class Sequence : public Composite
 {
-    GDCLASS(Sequence, Task);
+    GDCLASS(Sequence, Composite);
 
 protected:
     static void _bind_methods();
 
 public:
     Status update() override;
-    // TODO: Should make Composites class which defines reset
-    void reset() override;
-
-private:
-    int curChild=0;
 };
 
 

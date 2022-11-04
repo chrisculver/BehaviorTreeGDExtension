@@ -5,6 +5,20 @@
 
 using namespace godot;
 
+void Composite::_bind_methods()
+{
+    ClassDB::bind_method("reset", &Composite::reset);
+}
+
+void Composite::reset()
+{
+    curChild=0;
+    Task::reset();
+}
+
+
+
+
 
 void Selector::_bind_methods()
 {
@@ -25,13 +39,6 @@ Task::Status Selector::update()
     }
 
     return Task::Status::FAILURE;
-}
-
-
-void Selector::reset()
-{
-    curChild=0;
-    Task::reset();
 }
 
 
@@ -57,11 +64,4 @@ Task::Status Sequence::update()
     }
 
     return Task::Status::SUCCESS;
-}
-
-
-void Sequence::reset()
-{
-    curChild=0;
-    Task::reset();
 }

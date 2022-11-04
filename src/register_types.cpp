@@ -19,6 +19,7 @@ void initialize_bt_types(ModuleInitializationLevel p_level)
 	{
         ClassDB::register_class<Task>();
 
+		ClassDB::register_class<Composite>();
 		ClassDB::register_class<Selector>();
 		ClassDB::register_class<Sequence>();
 
