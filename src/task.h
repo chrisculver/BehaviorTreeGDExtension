@@ -46,6 +46,7 @@ public:
 };
 
 
+
 VARIANT_ENUM_CAST(Task,Status);
 
 #endif

@@ -1,8 +1,9 @@
 #include "register_types.h"
 
 #include "task.h"
-#include "composites.h"
 #include "behavior_tree.h"
+#include "composites.h"
+#include "decorators.h"
 
 #include <godot/gdnative_interface.h>
 
@@ -19,11 +20,17 @@ void initialize_bt_types(ModuleInitializationLevel p_level)
 	{
         ClassDB::register_class<Task>();
 
+		ClassDB::register_class<BehaviorTree>();
+
 		ClassDB::register_class<Composite>();
 		ClassDB::register_class<Selector>();
 		ClassDB::register_class<Sequence>();
 
-		ClassDB::register_class<BehaviorTree>();
+		ClassDB::register_class<Decorator>();
+		ClassDB::register_class<AlwaysSuccess>();
+		ClassDB::register_class<AlwaysFailure>();
+
+
 	}
 }
 
