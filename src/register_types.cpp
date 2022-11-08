@@ -2,6 +2,8 @@
 
 #include "task.h"
 #include "behavior_tree.h"
+#include "blackboard.h"
+#include "leaf.h"
 #include "composites.h"
 #include "decorators.h"
 
@@ -18,14 +20,20 @@ void initialize_bt_types(ModuleInitializationLevel p_level)
 {
 	if (p_level == MODULE_INITIALIZATION_LEVEL_SCENE)
 	{
+		// Base BT Node
         ClassDB::register_class<Task>();
-
+		
+		// BT & BB & Leaf
 		ClassDB::register_class<BehaviorTree>();
+		ClassDB::register_class<BlackBoard>();
+		ClassDB::register_class<Leaf>();
 
+		// Composites
 		ClassDB::register_class<Composite>();
 		ClassDB::register_class<Selector>();
 		ClassDB::register_class<Sequence>();
 
+		// Decorators
 		ClassDB::register_class<Decorator>();
 		ClassDB::register_class<AlwaysSuccess>();
 		ClassDB::register_class<AlwaysFailure>();

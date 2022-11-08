@@ -8,7 +8,9 @@ using namespace godot;
 
 void BehaviorTree::_bind_methods()
 {
-
+    ClassDB::bind_method("set_blackboard", &BehaviorTree::set_blackboard);
+    ClassDB::bind_method("get_blackboard", &BehaviorTree::get_blackboard);
+    ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "blackboard"), "set_blackboard", "get_blackboard");
 }
 
 BehaviorTree::BehaviorTree(){}
@@ -40,3 +42,14 @@ void BehaviorTree::_physics_process(double _delta)
     (Object::cast_to<Task>(get_child(0)))->tick();
 }
 */
+
+void BehaviorTree::set_blackboard(const Ref<BlackBoard> &new_blackboard)
+{
+    // TODO should probably set the BB of all children.
+    blackboard=new_blackboard;
+}
+
+Ref<BlackBoard> BehaviorTree::get_blackboard()
+{
+    return blackboard;
+}

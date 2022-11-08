@@ -1,4 +1,4 @@
-extends Task
+extends Leaf
 
 
 func update():
