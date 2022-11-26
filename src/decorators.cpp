@@ -9,7 +9,7 @@ using namespace godot;
 
 void AlwaysSuccess::_bind_methods()
 {
-    ClassDB::bind_method("update", &AlwaysSuccess::update);
+    ClassDB::bind_method(D_METHOD("update"), &AlwaysSuccess::update);
 }
 
 Task::Status AlwaysSuccess::update()
@@ -21,7 +21,7 @@ Task::Status AlwaysSuccess::update()
 
 void AlwaysFailure::_bind_methods()
 {
-    ClassDB::bind_method("update", &AlwaysFailure::update);
+    ClassDB::bind_method(D_METHOD("update"), &AlwaysFailure::update);
 }
 
 Task::Status AlwaysFailure::update()

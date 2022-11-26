@@ -10,23 +10,23 @@ using namespace godot;
 void Task::_bind_methods()
 {
     // Abstract Methods
-    ClassDB::bind_method("update", &Task::update);
+    ClassDB::bind_method(D_METHOD("update"), &Task::update);
     //BIND_VIRTUAL_METHOD(&Task, &Task::update);
-    ClassDB::bind_method("initialize", &Task::initialize);
-    ClassDB::bind_method("terminate", &Task::terminate);
+    ClassDB::bind_method(D_METHOD("initialize"), &Task::initialize);
+    ClassDB::bind_method(D_METHOD("terminate"), &Task::terminate);
 
 
 
     // Final Methods
-    ClassDB::bind_method("tick", &Task::tick);
-    ClassDB::bind_method("isRunning", &Task::isRunning);
-    ClassDB::bind_method("isSuccess", &Task::isSuccess);
-    ClassDB::bind_method("isFailure", &Task::isFailure);
-    ClassDB::bind_method("isTerminated", &Task::isTerminated);
-    ClassDB::bind_method("reset", &Task::reset);
+    ClassDB::bind_method(D_METHOD("tick"), &Task::tick);
+    ClassDB::bind_method(D_METHOD("isRunning"), &Task::isRunning);
+    ClassDB::bind_method(D_METHOD("isSuccess"), &Task::isSuccess);
+    ClassDB::bind_method(D_METHOD("isFailure"), &Task::isFailure);
+    ClassDB::bind_method(D_METHOD("isTerminated"), &Task::isTerminated);
+    ClassDB::bind_method(D_METHOD("reset"), &Task::reset);
 
     // Properties
-    ClassDB::bind_method("set_status", &Task::set_status);
+    ClassDB::bind_method(D_METHOD("set_status"), &Task::set_status);
     ClassDB::bind_method(D_METHOD("get_status"), &Task::get_status);
     ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "status"), "set_status", "get_status");
 

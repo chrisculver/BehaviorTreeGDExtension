@@ -16,6 +16,7 @@ process_mode = 4
 
 [node name="Task" type="Leaf" parent="Sequence"]
 blackboard = ExtResource("1_p5nkt")
+status = 452264914
 script = ExtResource("2_8o3r1")
 
 [node name="Task2" type="Leaf" parent="Sequence"]

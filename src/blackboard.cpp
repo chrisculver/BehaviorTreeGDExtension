@@ -7,9 +7,9 @@ using namespace godot;
 
 void BlackBoard::_bind_methods()
 {
-    ClassDB::bind_method("has_data", &BlackBoard::has_data);
-    ClassDB::bind_method("set_data", &BlackBoard::set_data);
-    ClassDB::bind_method("get_data", &BlackBoard::get_data);
+    ClassDB::bind_method(D_METHOD("has_data"), &BlackBoard::has_data);
+    ClassDB::bind_method(D_METHOD("set_data"), &BlackBoard::set_data);
+    ClassDB::bind_method(D_METHOD("get_data"), &BlackBoard::get_data);
 }
 
 

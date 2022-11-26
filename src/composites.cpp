@@ -7,7 +7,7 @@ using namespace godot;
 
 void Composite::_bind_methods()
 {
-    ClassDB::bind_method("reset", &Composite::reset);
+    ClassDB::bind_method(D_METHOD("reset"), &Composite::reset);
 }
 
 void Composite::reset()
@@ -22,7 +22,7 @@ void Composite::reset()
 
 void Selector::_bind_methods()
 {
-    ClassDB::bind_method("update", &Selector::update);
+    ClassDB::bind_method(D_METHOD("update"), &Selector::update);
 }
 
 
@@ -45,7 +45,7 @@ Task::Status Selector::update()
 
 void Sequence::_bind_methods()
 {
-    ClassDB::bind_method("update", &Sequence::update);
+    ClassDB::bind_method(D_METHOD("update"), &Sequence::update);
 }
 
 Task::Status Sequence::update()

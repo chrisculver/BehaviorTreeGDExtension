@@ -9,10 +9,10 @@ using namespace godot;
 
 void Leaf::_bind_methods()
 {
-    ClassDB::bind_method("update", &Leaf::update);
+    ClassDB::bind_method(D_METHOD("update"), &Leaf::update);
     
-    ClassDB::bind_method("set_blackboard", &Leaf::set_blackboard);
-    ClassDB::bind_method("get_blackboard", &Leaf::get_blackboard);
+    ClassDB::bind_method(D_METHOD("set_blackboard"), &Leaf::set_blackboard);
+    ClassDB::bind_method(D_METHOD("get_blackboard"), &Leaf::get_blackboard);
     ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "blackboard"), "set_blackboard", "get_blackboard");
 }
 

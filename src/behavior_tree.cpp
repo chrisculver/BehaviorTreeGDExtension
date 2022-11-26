@@ -8,8 +8,8 @@ using namespace godot;
 
 void BehaviorTree::_bind_methods()
 {
-    ClassDB::bind_method("set_blackboard", &BehaviorTree::set_blackboard);
-    ClassDB::bind_method("get_blackboard", &BehaviorTree::get_blackboard);
+    ClassDB::bind_method(D_METHOD("set_blackboard"), &BehaviorTree::set_blackboard);
+    ClassDB::bind_method(D_METHOD("get_blackboard"), &BehaviorTree::get_blackboard);
     ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "blackboard"), "set_blackboard", "get_blackboard");
 }
 

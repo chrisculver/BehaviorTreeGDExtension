@@ -19,7 +19,7 @@
         {
             "label": "build-godot-cpp",
             "type": "shell",
-            "command": "conda activate godot; scons target=template_debug",
+            "command": "conda activate GameDev; scons target=template_debug",
             "dependsOrder": "sequence",
             "dependsOn":["godot-cpp-dir"],
             "presentation": {
@@ -50,7 +50,7 @@
         {
             "label": "initial-build-extension",
             "type": "shell",
-            "command": "conda activate godot; scons target=template_debug",
+            "command": "conda activate GameDev; scons target=template_debug",
             "dependsOrder": "sequence",
             "dependsOn":["godot-cpp-dir", "build-godot-cpp", "top-level-dir"],
             "presentation": {
@@ -66,7 +66,7 @@
         {
             "label": "build-extension",
             "type": "shell",
-            "command": "conda activate godot; scons target=template_debug",
+            "command": "conda activate GameDev; scons target=template_debug",
             "presentation": {
                 "echo": true,
                 "revealProblems": "onProblem",
